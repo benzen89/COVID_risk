@@ -1,0 +1,248 @@
+<head>
+    <title>Covid Risk Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+  <form>
+    <h1>Equivalent Age Covid Risk Calculator</h1>
+
+    <h4>This risk calculator evaluates Covid-19 risk to an individual by taking their age and adjusting it for relevant underlying health conditions.</h4>
+    <h5>Based on data from Associatino of Local Authority Risk Advisors, https://alama.org.uk/covid-19-medical-risk-management/</h5>
+
+    <div class="form-group">
+      <input type="text" required="required"/>
+      <label for="input" class="control-label">Name</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+      <input id="ageinput" type="number" min="18" required="required"/>
+      <label for="input" class="control-label">Age</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select class="RISK_FACTORS">
+            <option value="0"></option>
+            <option value="-8">Female</option>
+            <option value="0">Male</option>
+        </select>
+        <label for="select" class="control-label">Sex</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select class="RISK_FACTORS">
+            <option value="0"></option>
+            <option value="0">White</option>
+            <option value="5">Asian</option>
+            <option value="6">Black, Americas & Afro Carribbean</option>
+            <option value="5">Mixed</option>
+            <option value="3">Other non-white</option>
+        </select>
+        <label for="select" class="control-label">Ethnicity</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="4">30-34.9</option>
+            <option value="5">35-39.9</option>
+            <option value="10">40 or higher</option>
+        </select>
+        <label for="select" class="control-label">Body mass index</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="1">Mild (no requirement for oral corticosteroids in past year)</option>
+            <option value="4">Severe (requiring oral corticosteroids in past year)</option>
+        </select>
+        <label for="select" class="control-label">Asthma</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="4">Controlled</option>
+            <option value="10">Uncontrolled</option>
+            <option value="7">Yes, but no recent HbA1c measure available</option>
+        </select>
+        <label for="select" class="control-label">Diabetes</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="4">Yes</option>
+        </select>
+        <label for="select" class="control-label">Chronic heart disease</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="7">Yes</option>
+        </select>
+        <label for="select" class="control-label">Chronic respiratory disease (excluding asthma)</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="6">Yes</option>
+        </select>
+        <label for="select" class="control-label">Chronic kidney disease</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="0">Diagnosed 5 or more years ago</option>
+            <option value="2">Diagnosed 1-4.9 years ago</option>
+            <option value="5">Diagnosed under 1 year ago</option>
+        </select>
+        <label for="select" class="control-label">Non-haematological cancer</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="7">Diagnosed 5 or more years ago</option>
+            <option value="12">Diagnosed 1-4.9 years ago</option>
+            <option value="14">Diagnosed under 1 year ago</option>
+        </select>
+        <label for="select" class="control-label">Haematological malignancy</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="5">Yes</option>
+        </select>
+        <label for="select" class="control-label">Liver disease</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="10">Yes</option>
+        </select>
+        <label for="select" class="control-label">Chronic neurological disease other than stroke or dementia**</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="16">Yes</option>
+        </select>
+        <label for="select" class="control-label">Organ transplant</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="4">Yes</option>
+        </select>
+        <label for="select" class="control-label">Spleen diseases</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="2">Yes</option>
+        </select>
+        <label for="select" class="control-label">Rheumatoid/lupus/psoriasis</label><i class="bar"></i>
+    </div>
+
+    <div class="form-group">
+        <select>
+            <option value="0"></option>
+            <option value="0">No</option>
+            <option value="6">Yes</option>
+        </select>
+        <label for="select" class="control-label">Other immunosuppressive condition</label><i class="bar"></i>
+    </div>
+
+    <h2 id="adjustedage">Adjusted Age: 0</h2>
+    <h2 id="riskscore">Risk Score: 0</h2>
+    <h2 id="description">Description: Moderate Risk</h2>
+
+    <!--
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"/><i class="helper"></i>I understand that by submitting my Name, Adjusted Age, Risk Score & Description will be uploaded to XYZ... and I'm ok with that... The data will be used for XYZ...
+      </label>
+    </div>-->
+
+  </form>
+  <div class="button-container">
+    <button type="button" class="button"><span>Submit</span></button>
+  </div>
+
+</div>
+
+<script>
+  function calculateAll() {
+    //ADJUSTED AGE;
+    var realage = parseInt(ageinput.value);
+    if( isNaN(realage) ){
+      realage = 0;
+    }
+    var riskfactor = 0;
+    for (let index = 0; index < selects.length; index++) {
+      riskfactor = riskfactor + parseInt(selects[index].value);
+    }
+    adjustedage = riskfactor + realage;
+    document.getElementById("adjustedage").innerHTML = "Adjusted Age: " + adjustedage;
+
+    //RISK SCORE
+    if(adjustedage < 51){
+      riskscore = 1;
+    } else {
+      riskscore = Math.pow(((adjustedage - 50) + 1), 2);
+    }
+    document.getElementById("riskscore").innerHTML = "Risk Score: " + riskscore;
+
+    //DESCRIPTION
+    var description = "Moderate Risk";
+    if(adjustedage < 50){
+      description = "Moderate Risk";
+    }
+    else if(adjustedage < 60){
+      description = "Moderate to High Risk";
+    }
+    else if(adjustedage < 70){
+      description = "High Risk";
+    }
+    else {
+      description = "Very High Risk";
+    }
+    document.getElementById("description").innerHTML = "Description: " + description;
+  }
+  
+  // on change listeners for input fields
+  var selects = document.getElementsByTagName("select");
+  for (let index = 0; index < selects.length; index++) {
+    selects[index].addEventListener("change", calculateAll);
+  }
+
+  var ageinput = document.getElementById("ageinput");
+  ageinput.addEventListener("change", calculateAll);
+
+</script>
+
+</body>
